@@ -1,22 +1,22 @@
 //Mateo Garcia
 const toCelsius = (f) => {
-    if (!isFinite(f)) throw new TypeError("f must be finite");
+    if (!isFinite(f)) throw new TypeError('f must be finite');
     return ((f - 32) * (5/9)).toFixed(1);
-}
+};
 
 const toFahrenheit= (c) => {
-    if (!isFinite(c)) throw new TypeError("c must be finite");
+    if (!isFinite(c)) throw new TypeError('c must be finite');
     return (c * (9/5) + 32).toFixed(1);
-}
+};
 
 const movingAverage = (series,window) => {
-    if (!Array.isArray(series) || !Number.isInteger(window)) throw new TypeError("type error");
+    if (!Array.isArray(series) || !Number.isInteger(window)) throw new TypeError('type error');
 
     series.map(e => {
-        if (isNaN(e)) throw new TypeError("series must be a number array");
+        if (isNaN(e)) throw new TypeError('series must be a number array');
     });
 
-    if (window < 2 || window > series.length) throw new RangeError("window out of range");
+    if (window < 2 || window > series.length) throw new RangeError('window out of range');
 
     let response = [];
 
@@ -29,7 +29,7 @@ const movingAverage = (series,window) => {
         currentAvarage = 0;
     }
     return response;
-}
+};
 
 
 
@@ -37,4 +37,4 @@ module.exports = {
     toCelsius,
     toFahrenheit,
     movingAverage
-}
+};
